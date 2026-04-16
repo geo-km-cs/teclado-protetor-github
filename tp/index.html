@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teclado Protetor — Demo</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- Status bar -->
+  <div class="status-bar">
+    <span class="s-left">09:41</span>
+    <span class="s-right">
+      <svg viewBox="0 0 24 24"><path d="M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.56 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg viewBox="0 0 24 24"><rect x="1" y="6" width="15" height="12" rx="2" stroke="#fff" stroke-width="1.5" fill="none"/><path d="M23 10v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/><rect x="3" y="8" width="9" height="8" rx="1" fill="#fff"/></svg>
+      <span class="battery">85%</span>
+    </span>
+  </div>
+
+  <!-- ══ CHAT LIST SCREEN ══ -->
+  <div id="chatListScreen" class="chat-list-screen">
+    <div class="cl-header">
+      <div class="cl-header-top">
+        <span class="cl-title">WhatsApp</span>
+        <div class="cl-icons">
+          <button class="cl-icon-btn" title="Câmera">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </button>
+          <button class="cl-icon-btn" title="Buscar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button class="cl-icon-btn" title="Mais opções">
+            <svg viewBox="0 0 24 24" fill="#aebac1"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="cl-tabs">
+        <div class="cl-tab-cam">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <span class="cl-tab active">CHATS</span>
+        <span class="cl-tab">STATUS</span>
+        <span class="cl-tab">CALLS</span>
+      </div>
+    </div>
+
+    <div class="cl-list">
+      <div class="chat-item" data-chat="devyn"   data-name="Devyn"                       data-status="online"                   data-av="D" data-avbg="#128c7e"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMxYTNhNGEiLz48cmVjdCB4PSIyMCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjYzY4NjQyIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iNDYiIHJ4PSIxNCIgcnk9IjgiIGZpbGw9IiMyZDZhNGYiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMiIgcng9IjExIiByeT0iMTIiIGZpbGw9IiNjNjg2NDIiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIxMiIgcng9IjExIiByeT0iNiIgZmlsbD0iIzJjMTgxMCIvPjxjaXJjbGUgY3g9IjE1IiBjeT0iMTQiIHI9IjQiIGZpbGw9IiMyYzE4MTAiLz48Y2lyY2xlIGN4PSIzMyIgY3k9IjE0IiByPSI0IiBmaWxsPSIjMmMxODEwIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjMWEwYTAwIi8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjMWEwYTAwIi8+PGNpcmNsZSBjeD0iMjAuNiIgY3k9IjIxLjQiIHI9IjAuNyIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIyOC42IiBjeT0iMjEuNCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0xNy41IDE4LjUgUTIwIDE3LjUgMjIuNSAxOC41IiBzdHJva2U9IiMyYzE4MTAiIHN0cm9rZS13aWR0aD0iMS4yIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMjUuNSAxOC41IFEyOCAxNy41IDMwLjUgMTguNSIgc3Ryb2tlPSIjMmMxODEwIiBzdHJva2Utd2lkdGg9IjEuMiIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iMjYiIHJ4PSIxLjUiIHJ5PSIxIiBmaWxsPSIjYjU3MjJlIi8+PHBhdGggZD0iTTIwIDI5LjUgUTI0IDMyIDI4IDI5LjUiIHN0cm9rZT0iIzhhNGExYSIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIxMy41IiBjeT0iMjIiIHJ4PSIxLjgiIHJ5PSIyLjUiIGZpbGw9IiNjNjg2NDIiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjYzY4NjQyIi8+PC9zdmc+" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Devyn</span><span class="ci-time">09:35</span></div><div class="ci-prev">Calma, vou digitar com o Teclado Protetor primeiro…</div></div></div>
+      <div class="chat-item" data-chat="host"    data-name="Dono da Casa — Airbnb"       data-status="visto hoje às 08:55"      data-av="H" data-avbg="#e05a00"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMzZDIwMDgiLz48cmVjdCB4PSIyMCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjZThiODhhIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iNDYiIHJ4PSIxNCIgcnk9IjgiIGZpbGw9IiNlMDVhMDAiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMiIgcng9IjExIiByeT0iMTIiIGZpbGw9IiNlOGI4OGEiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIxMSIgcng9IjExLjUiIHJ5PSI1LjUiIGZpbGw9IiM1YzMzMTciLz48cGF0aCBkPSJNMTMgMTQgUTEyIDIwIDEzIDI0IiBzdHJva2U9IiM1YzMzMTciIHN0cm9rZS13aWR0aD0iMy41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMzUgMTQgUTM2IDIwIDM1IDI0IiBzdHJva2U9IiM1YzMzMTciIHN0cm9rZS13aWR0aD0iMy41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cmVjdCB4PSIxMyIgeT0iMTciIHdpZHRoPSIzIiBoZWlnaHQ9IjciIHJ4PSIxLjUiIGZpbGw9IiM1YzMzMTciLz48cmVjdCB4PSIzMiIgeT0iMTciIHdpZHRoPSIzIiBoZWlnaHQ9IjciIHJ4PSIxLjUiIGZpbGw9IiM1YzMzMTciLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIyMiIgcng9IjIiIHJ5PSIyLjIiIGZpbGw9IiMyZDZhMWEiLz48ZWxsaXBzZSBjeD0iMjgiIGN5PSIyMiIgcng9IjIiIHJ5PSIyLjIiIGZpbGw9IiMyZDZhMWEiLz48Y2lyY2xlIGN4PSIyMC42IiBjeT0iMjEuNCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9IjI4LjYiIGN5PSIyMS40IiByPSIwLjciIGZpbGw9IndoaXRlIi8+PHBhdGggZD0iTTE3LjUgMTguOCBRMjAgMTcuOCAyMi41IDE4LjgiIHN0cm9rZT0iIzVjMzMxNyIgc3Ryb2tlLXdpZHRoPSIxLjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNS41IDE4LjggUTI4IDE3LjggMzAuNSAxOC44IiBzdHJva2U9IiM1YzMzMTciIHN0cm9rZS13aWR0aD0iMS4zIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMjMgMjUgUTIyLjUgMjcgMjQgMjcuMiBRMjUuNSAyNyAyNSAyNSIgc3Ryb2tlPSIjYzg5MDZhIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMjAuNSAzMCBRMjQgMzIuNSAyNy41IDMwIiBzdHJva2U9IiNjMDc4NDAiIHN0cm9rZS13aWR0aD0iMS4yIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZWxsaXBzZSBjeD0iMTMuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjZThiODhhIi8+PGVsbGlwc2UgY3g9IjM0LjUiIGN5PSIyMiIgcng9IjEuOCIgcnk9IjIuNSIgZmlsbD0iI2U4Yjg4YSIvPjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Dono da Casa — Airbnb</span><span class="ci-time">08:47</span></div><div class="ci-prev">Aqui está o link oficial da casa…</div></div></div>
+      <div class="chat-item" data-chat="family"  data-name="Família Silva 👨‍👩‍👧‍👦"          data-status="Júlia: alterou a foto"    data-av="F" data-avbg="#6366f1"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiM0YTFhNmEiLz48Y2lyY2xlIGN4PSIxNCIgY3k9IjIyIiByPSI3IiBmaWxsPSIjZDQ5NTZhIi8+PGVsbGlwc2UgY3g9IjE0IiBjeT0iMTciIHJ4PSI3IiByeT0iNCIgZmlsbD0iIzNkMjA2MCIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMjEiIHI9IjEuMiIgZmlsbD0iIzFhMDgwMCIvPjxjaXJjbGUgY3g9IjE2IiBjeT0iMjEiIHI9IjEuMiIgZmlsbD0iIzFhMDgwMCIvPjxwYXRoIGQ9Ik0xMiAyNCBRMTQgMjUuNSAxNiAyNCIgc3Ryb2tlPSIjYTA1MDMwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSIzNCIgY3k9IjIyIiByPSI3IiBmaWxsPSIjZThiMDkwIi8+PGVsbGlwc2UgY3g9IjM0IiBjeT0iMTciIHJ4PSI3IiByeT0iNCIgZmlsbD0iIzhiNDUxMyIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMjEiIHI9IjEuMiIgZmlsbD0iIzFhMDgwMCIvPjxjaXJjbGUgY3g9IjM2IiBjeT0iMjEiIHI9IjEuMiIgZmlsbD0iIzFhMDgwMCIvPjxwYXRoIGQ9Ik0zMiAyNCBRMzQgMjUuNSAzNiAyNCIgc3Ryb2tlPSIjYTA1MDMwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjM1IiByPSI1LjUiIGZpbGw9IiNmNWM1OWUiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIzMC41IiByeD0iNS41IiByeT0iMyIgZmlsbD0iI2ZmZDcwMCIvPjxjaXJjbGUgY3g9IjIyLjUiIGN5PSIzNC41IiByPSIxIiBmaWxsPSIjMWEwODAwIi8+PGNpcmNsZSBjeD0iMjUuNSIgY3k9IjM0LjUiIHI9IjEiIGZpbGw9IiMxYTA4MDAiLz48cGF0aCBkPSJNMjIuNSAzNyBRMjQgMzguNSAyNS41IDM3IiBzdHJva2U9IiNlMDcwNTAiIHN0cm9rZS13aWR0aD0iMC45IiBmaWxsPSJub25lIi8+PC9zdmc+" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Família Silva 👨‍👩‍👧‍👦</span><span class="ci-time">Ontem</span></div><div class="ci-prev">Achei um link com desconto exclusivo…</div></div><span class="ci-unread">3</span></div>
+      <div class="chat-item" data-chat="grandma" data-name="Vó Neide 👵❤️"              data-status="digitando…"               data-av="N" data-avbg="#9333ea"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiM0YTFhNmEiLz48cmVjdCB4PSIyMCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjZGJhODgyIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iNDYiIHJ4PSIxNCIgcnk9IjgiIGZpbGw9IiM5YjcyY2YiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMiIgcng9IjExIiByeT0iMTIiIGZpbGw9IiNkYmE4ODIiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIxMS41IiByeD0iMTEiIHJ5PSI1IiBmaWxsPSIjZDBkMGQwIi8+PGNpcmNsZSBjeD0iMjQiIGN5PSIxMCIgcj0iNSIgZmlsbD0iI2M4YzhjOCIvPjxjaXJjbGUgY3g9IjI0IiBjeT0iOSIgcj0iMy41IiBmaWxsPSIjYjhiOGI4Ii8+PGVsbGlwc2UgY3g9IjE0IiBjeT0iMTYiIHJ4PSIyLjUiIHJ5PSI1IiBmaWxsPSIjZDBkMGQwIi8+PGVsbGlwc2UgY3g9IjM0IiBjeT0iMTYiIHJ4PSIyLjUiIHJ5PSI1IiBmaWxsPSIjZDBkMGQwIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMjIiIHJ4PSIyIiByeT0iMiIgZmlsbD0iIzVhMzAxMCIvPjxlbGxpcHNlIGN4PSIyOCIgY3k9IjIyIiByeD0iMiIgcnk9IjIiIGZpbGw9IiM1YTMwMTAiLz48Y2lyY2xlIGN4PSIyMC41IiBjeT0iMjEuNSIgcj0iMC42IiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9IjI4LjUiIGN5PSIyMS41IiByPSIwLjYiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMTYuNSIgeT0iMTkuNSIgd2lkdGg9IjciIGhlaWdodD0iNSIgcng9IjIuNSIgc3Ryb2tlPSIjOGI2OTE0IiBzdHJva2Utd2lkdGg9IjEuMSIgZmlsbD0ibm9uZSIvPjxyZWN0IHg9IjI0LjUiIHk9IjE5LjUiIHdpZHRoPSI3IiBoZWlnaHQ9IjUiIHJ4PSIyLjUiIHN0cm9rZT0iIzhiNjkxNCIgc3Ryb2tlLXdpZHRoPSIxLjEiIGZpbGw9Im5vbmUiLz48bGluZSB4MT0iMjMuNSIgeTE9IjIyIiB4Mj0iMjQuNSIgeTI9IjIyIiBzdHJva2U9IiM4YjY5MTQiIHN0cm9rZS13aWR0aD0iMS4xIi8+PGxpbmUgeDE9IjE2LjUiIHkxPSIyMiIgeDI9IjE0LjUiIHkyPSIyMi41IiBzdHJva2U9IiM4YjY5MTQiIHN0cm9rZS13aWR0aD0iMSIvPjxsaW5lIHgxPSIzMS41IiB5MT0iMjIiIHgyPSIzMy41IiB5Mj0iMjIuNSIgc3Ryb2tlPSIjOGI2OTE0IiBzdHJva2Utd2lkdGg9IjEiLz48cGF0aCBkPSJNMTcuNSAxOSBRMjAgMTguMiAyMi41IDE5IiBzdHJva2U9IiNhMGEwYTAiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTI1LjUgMTkgUTI4IDE4LjIgMzAuNSAxOSIgc3Ryb2tlPSIjYTBhMGEwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIyNCIgY3k9IjI2LjUiIHJ4PSIxLjMiIHJ5PSIwLjkiIGZpbGw9IiNjODkwNjIiLz48cGF0aCBkPSJNMTkuNSAyOS41IFEyNCAzMyAyOC41IDI5LjUiIHN0cm9rZT0iIzlhNjA0MCIgc3Ryb2tlLXdpZHRoPSIxLjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xOSAyOSBRMTggMjcgMTguNSAyNiIgc3Ryb2tlPSIjYzhhODg4IiBzdHJva2Utd2lkdGg9IjAuNyIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0yOSAyOSBRMzAgMjcgMjkuNSAyNiIgc3Ryb2tlPSIjYzhhODg4IiBzdHJva2Utd2lkdGg9IjAuNyIgZmlsbD0ibm9uZSIvPjxlbGxpcHNlIGN4PSIxMy41IiBjeT0iMjIiIHJ4PSIxLjgiIHJ5PSIyLjUiIGZpbGw9IiNkYmE4ODIiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjZGJhODgyIi8+PGNpcmNsZSBjeD0iMTMuNSIgY3k9IjI0IiByPSIxLjIiIGZpbGw9IiNjOGE4MjAiLz48Y2lyY2xlIGN4PSIzNC41IiBjeT0iMjQiIHI9IjEuMiIgZmlsbD0iI2M4YTgyMCIvPjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Vó Neide 👵❤️</span><span class="ci-time">Ontem</span></div><div class="ci-prev">Júlia, eu clico nesse link aqui?</div></div><span class="ci-unread">1</span></div>
+      <div class="chat-item" data-chat="promo"   data-name="Promoções 🎁"      data-status="4.872 membros"                 data-av="💸" data-avbg="#b45309"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMxYTFhMWEiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSI0NCIgcng9IjE4IiByeT0iMTAiIGZpbGw9IiMyMjIiLz48cGF0aCBkPSJNMTAgMzAgUTEwIDE4IDI0IDE2IFEzOCAxOCAzOCAzMCBMMzggNDggTDEwIDQ4IFoiIGZpbGw9IiMyYTJhMmEiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMCIgcng9IjEzIiByeT0iOSIgZmlsbD0iIzFhMWExYSIvPjxlbGxpcHNlIGN4PSIyNCIgY3k9IjIzIiByeD0iOSIgcnk9IjEwIiBmaWxsPSIjMWExYTFhIi8+PGVsbGlwc2UgY3g9IjIwLjUiIGN5PSIyMi41IiByeD0iMi41IiByeT0iMS44IiBmaWxsPSIjZmY0NDQ0IiBvcGFjaXR5PSIwLjkiLz48ZWxsaXBzZSBjeD0iMjcuNSIgY3k9IjIyLjUiIHJ4PSIyLjUiIHJ5PSIxLjgiIGZpbGw9IiNmZjQ0NDQiIG9wYWNpdHk9IjAuOSIvPjxlbGxpcHNlIGN4PSIyMC41IiBjeT0iMjIuNSIgcng9IjEuMiIgcnk9IjAuOSIgZmlsbD0iI2ZmODg4OCIvPjxlbGxpcHNlIGN4PSIyNy41IiBjeT0iMjIuNSIgcng9IjEuMiIgcnk9IjAuOSIgZmlsbD0iI2ZmODg4OCIvPjxwYXRoIGQ9Ik0xOSAyNyBRMjQgMzEgMjkgMjciIHN0cm9rZT0iI2NjMzMzMyIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjx0ZXh0IHg9IjI0IiB5PSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSI5IiBmaWxsPSIjZjU5ZTBiIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIiBvcGFjaXR5PSIwLjg1Ij7wn5K4PC90ZXh0Pjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Promoções 🎁</span><span class="ci-time">Ontem</span></div><div class="ci-prev">💸 Envie R$10 e ganhe R$500 de volta no PIX!</div></div></div>
+      <div class="chat-item" data-chat="agency"  data-name="Agência de Viagens Oficial" data-status="online"                   data-av="A" data-avbg="#0891b2"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMwYzRhNmUiLz48cmVjdCB4PSIyMCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjZjVjNWEwIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iNDciIHJ4PSIxNCIgcnk9IjgiIGZpbGw9IiMxZTNhNWYiLz48cG9seWdvbiBwb2ludHM9IjI0LDMzIDIyLDQwIDI0LDQzIDI2LDQwIiBmaWxsPSIjZTYzOTQ2Ii8+PHBhdGggZD0iTTIwIDM1IEwyMiAzMyBMMjYgMzMgTDI4IDM1IiBmaWxsPSJ3aGl0ZSIvPjxlbGxpcHNlIGN4PSIyNCIgY3k9IjIyIiByeD0iMTEiIHJ5PSIxMiIgZmlsbD0iI2Y1YzVhMCIvPjxwYXRoIGQ9Ik0xMyAxNSBRMTQgOSAyNCA5IFEzNCA5IDM1IDE1IFEzNCAxMSAyNCAxMC41IFExNCAxMSAxMyAxNSIgZmlsbD0iIzNkMjAwOCIvPjxlbGxpcHNlIGN4PSIyNCIgY3k9IjEwIiByeD0iMTEiIHJ5PSI0LjUiIGZpbGw9IiMzZDIwMDgiLz48cGF0aCBkPSJNMTMgMTUgUTEzIDE5IDE0IDIyIiBzdHJva2U9IiMzZDIwMDgiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjM2QyMDA4Ii8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjM2QyMDA4Ii8+PGNpcmNsZSBjeD0iMjAuNiIgY3k9IjIxLjQiIHI9IjAuNyIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIyOC42IiBjeT0iMjEuNCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0xNy41IDE4LjUgUTIwIDE3LjUgMjIuNSAxOC41IiBzdHJva2U9IiMzZDIwMDgiIHN0cm9rZS13aWR0aD0iMS4zIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMjUuNSAxOC41IFEyOCAxNy41IDMwLjUgMTguNSIgc3Ryb2tlPSIjM2QyMDA4IiBzdHJva2Utd2lkdGg9IjEuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTIzIDI1IFEyMi41IDI3IDI0IDI3LjIgUTI1LjUgMjcgMjUgMjUiIHN0cm9rZT0iI2Q0YTA3YSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIi8+PHBhdGggZD0iTTIwLjUgMzAgUTI0IDMyIDI3LjUgMzAiIHN0cm9rZT0iI2MwNzA0MCIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIxMy41IiBjeT0iMjIiIHJ4PSIxLjgiIHJ5PSIyLjUiIGZpbGw9IiNmNWM1YTAiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjZjVjNWEwIi8+PC9zdmc+" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Agência de Viagens Oficial</span><span class="ci-time">Segunda</span></div><div class="ci-prev">Sempre enviaremos links com domínio .com.br verificado.</div></div></div>
+      <div class="chat-item" data-chat="bank"    data-name="Banco do Brasil (Inovação)" data-status="visto ontem às 15:18"     data-av="B" data-avbg="#f9c200" data-avcolor="#003366"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMwMDMzNjYiLz48Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIyMCIgZmlsbD0iI2Y5YzIwMCIgb3BhY2l0eT0iMC4xNSIvPjxyZWN0IHg9IjIwIiB5PSIzMiIgd2lkdGg9IjgiIGhlaWdodD0iNyIgcng9IjIiIGZpbGw9IiNlOGMwOTAiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSI0NyIgcng9IjE0IiByeT0iOCIgZmlsbD0iIzAwMWY0ZCIvPjxwb2x5Z29uIHBvaW50cz0iMjQsMzMgMjIuNSwzOSAyNCw0MiAyNS41LDM5IiBmaWxsPSIjZjljMjAwIi8+PHBhdGggZD0iTTIwIDM1IEwyMi41IDMzIEwyNS41IDMzIEwyOCAzNSIgZmlsbD0id2hpdGUiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMiIgcng9IjExIiByeT0iMTIiIGZpbGw9IiNlOGMwOTAiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIxMSIgcng9IjExIiByeT0iNSIgZmlsbD0iIzg4OCIvPjxwYXRoIGQ9Ik0xMyAxNSBRMTMgMTkgMTQgMjIiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIyLjUiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMzUgMTUgUTM1IDE5IDM0IDIyIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIi8+PGVsbGlwc2UgY3g9IjIwIiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjM2ExYTAwIi8+PGVsbGlwc2UgY3g9IjI4IiBjeT0iMjIiIHJ4PSIyIiByeT0iMi4yIiBmaWxsPSIjM2ExYTAwIi8+PGNpcmNsZSBjeD0iMjAuNiIgY3k9IjIxLjQiIHI9IjAuNyIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIyOC42IiBjeT0iMjEuNCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0xNyAxOC4zIFEyMCAxNy4yIDIzIDE4LjMiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNSAxOC4zIFEyOCAxNy4yIDMxIDE4LjMiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yMyAyNSBRMjIuNSAyNyAyNCAyNy4yIFEyNS41IDI3IDI1IDI1IiBzdHJva2U9IiNjOGEwNzAiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0yMC41IDMwIFEyNCAzMi41IDI3LjUgMzAiIHN0cm9rZT0iI2EwNzA0MCIgc3Ryb2tlLXdpZHRoPSIxLjIiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIxMy41IiBjeT0iMjIiIHJ4PSIxLjgiIHJ5PSIyLjUiIGZpbGw9IiNlOGMwOTAiLz48ZWxsaXBzZSBjeD0iMzQuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjZThjMDkwIi8+PGNpcmNsZSBjeD0iMzciIGN5PSIxMSIgcj0iNiIgZmlsbD0iI2Y5YzIwMCIvPjx0ZXh0IHg9IjM3IiB5PSIxNC41IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjciIGZpbGw9IiMwMDMzNjYiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC13ZWlnaHQ9IjkwMCI+QkI8L3RleHQ+PC9zdmc+" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Banco do Brasil (Inovação)</span><span class="ci-time">Domingo</span></div><div class="ci-prev">Podemos testar com nosso link oficial? 🛡️</div></div></div>
+      <div class="chat-item" data-chat="friend"  data-name="Carol — Melhor Amiga"        data-status="online"                   data-av="C" data-avbg="#db2777"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiM4MzE4NDMiLz48cmVjdCB4PSIyMCIgeT0iMzIiIHdpZHRoPSI4IiBoZWlnaHQ9IjciIHJ4PSIyIiBmaWxsPSIjZjVjNWEwIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iNDciIHJ4PSIxNCIgcnk9IjgiIGZpbGw9IiNlYzQ4OTkiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIyMiIgcng9IjExIiByeT0iMTIiIGZpbGw9IiNmNWM1YTAiLz48ZWxsaXBzZSBjeD0iMjQiIGN5PSIxMCIgcng9IjEyIiByeT0iNS41IiBmaWxsPSIjMWEwYTAwIi8+PHBhdGggZD0iTTEyIDE0IFExMCAyNCAxMSAzNiIgc3Ryb2tlPSIjMWEwYTAwIiBzdHJva2Utd2lkdGg9IjUiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNiAxNCBRMzggMjQgMzcgMzYiIHN0cm9rZT0iIzFhMGEwMCIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48ZWxsaXBzZSBjeD0iMjAiIGN5PSIyMiIgcng9IjIuMiIgcnk9IjIuMyIgZmlsbD0iIzNkMWEwMCIvPjxlbGxpcHNlIGN4PSIyOCIgY3k9IjIyIiByeD0iMi4yIiByeT0iMi4zIiBmaWxsPSIjM2QxYTAwIi8+PGNpcmNsZSBjeD0iMjAuNyIgY3k9IjIxLjQiIHI9IjAuNyIgZmlsbD0id2hpdGUiLz48Y2lyY2xlIGN4PSIyOC43IiBjeT0iMjEuNCIgcj0iMC43IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik0xOCAyMC41IEwxNy4yIDE5LjUgTTE4LjggMjAgTDE4LjMgMTguOSBNMjAgMTkuOCBMMjAgMTguNyIgc3Ryb2tlPSIjMWEwYTAwIiBzdHJva2Utd2lkdGg9IjAuNyIvPjxwYXRoIGQ9Ik0yNiAyMC41IEwyNS4yIDE5LjUgTTI2LjggMjAgTDI2LjMgMTguOSBNMjggMTkuOCBMMjggMTguNyIgc3Ryb2tlPSIjMWEwYTAwIiBzdHJva2Utd2lkdGg9IjAuNyIvPjxwYXRoIGQ9Ik0xNy41IDE5IFEyMCAxNy41IDIyLjUgMTkiIHN0cm9rZT0iIzFhMGEwMCIgc3Ryb2tlLXdpZHRoPSIxLjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0yNS41IDE5IFEyOCAxNy41IDMwLjUgMTkiIHN0cm9rZT0iIzFhMGEwMCIgc3Ryb2tlLXdpZHRoPSIxLjMiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxlbGxpcHNlIGN4PSIyNCIgY3k9IjI2LjUiIHJ4PSIxLjMiIHJ5PSIwLjkiIGZpbGw9IiNkNGEwODAiLz48cGF0aCBkPSJNMTkuNSAyOS41IFEyNCAzMy41IDI4LjUgMjkuNSIgc3Ryb2tlPSIjYzA2MDQwIiBzdHJva2Utd2lkdGg9IjEuNCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PGNpcmNsZSBjeD0iMTkuNSIgY3k9IjI5LjUiIHI9IjAuOCIgZmlsbD0iI2YwYTBhMCIvPjxjaXJjbGUgY3g9IjI4LjUiIGN5PSIyOS41IiByPSIwLjgiIGZpbGw9IiNmMGEwYTAiLz48ZWxsaXBzZSBjeD0iMTMuNSIgY3k9IjIyIiByeD0iMS44IiByeT0iMi41IiBmaWxsPSIjZjVjNWEwIi8+PGVsbGlwc2UgY3g9IjM0LjUiIGN5PSIyMiIgcng9IjEuOCIgcnk9IjIuNSIgZmlsbD0iI2Y1YzVhMCIvPjxjaXJjbGUgY3g9IjEzLjUiIGN5PSIyNC41IiByPSIxLjUiIHN0cm9rZT0iI2U5MWU4YyIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIi8+PGNpcmNsZSBjeD0iMzQuNSIgY3k9IjI0LjUiIHI9IjEuNSIgc3Ryb2tlPSIjZTkxZThjIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48L3N2Zz4=" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Carol — Melhor Amiga</span><span class="ci-time">Domingo</span></div><div class="ci-prev">Amiga, quase caí num golpe no Insta… 😭</div></div></div>
+      <div class="chat-item" data-chat="work"    data-name="Squad Segurança — Trabalho"  data-status="online"                   data-av="S" data-avbg="#047857"><div class="av" style="background:transparent;overflow:hidden"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMjQiIGZpbGw9IiMwNjRlM2IiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjI0IiByPSI2LjUiIGZpbGw9IiM1YzMwMTAiLz48ZWxsaXBzZSBjeD0iMTMiIGN5PSIxOSIgcng9IjYuNSIgcnk9IjQiIGZpbGw9IiMxYTBhMDAiLz48Y2lyY2xlIGN4PSIxMS41IiBjeT0iMjMiIHI9IjEuMSIgZmlsbD0iIzBhMDQwMCIvPjxjaXJjbGUgY3g9IjE0LjUiIGN5PSIyMyIgcj0iMS4xIiBmaWxsPSIjMGEwNDAwIi8+PHBhdGggZD0iTTExLjUgMjYgUTEzIDI3LjUgMTQuNSAyNiIgc3Ryb2tlPSIjM2QxYTAwIiBzdHJva2Utd2lkdGg9IjAuOSIgZmlsbD0ibm9uZSIvPjxjaXJjbGUgY3g9IjM1IiBjeT0iMjQiIHI9IjYuNSIgZmlsbD0iI2Y1ZDViMCIvPjxlbGxpcHNlIGN4PSIzNSIgY3k9IjE5IiByeD0iNi41IiByeT0iNCIgZmlsbD0iIzhiNDUxMyIvPjxjaXJjbGUgY3g9IjMzLjUiIGN5PSIyMyIgcj0iMS4xIiBmaWxsPSIjMWEwODAwIi8+PGNpcmNsZSBjeD0iMzYuNSIgY3k9IjIzIiByPSIxLjEiIGZpbGw9IiMxYTA4MDAiLz48cGF0aCBkPSJNMzMuNSAyNiBRMzUgMjcuNSAzNi41IDI2IiBzdHJva2U9IiNhMDYwMzAiIHN0cm9rZS13aWR0aD0iMC45IiBmaWxsPSJub25lIi8+PGNpcmNsZSBjeD0iMjQiIGN5PSIyMiIgcj0iNy41IiBmaWxsPSIjZDQ5NTZhIi8+PGVsbGlwc2UgY3g9IjI0IiBjeT0iMTYiIHJ4PSI3LjUiIHJ5PSI0LjUiIGZpbGw9IiMyYzE4MTAiLz48Y2lyY2xlIGN4PSIyMiIgY3k9IjIxIiByPSIxLjMiIGZpbGw9IiMxYTA4MDAiLz48Y2lyY2xlIGN4PSIyNiIgY3k9IjIxIiByPSIxLjMiIGZpbGw9IiMxYTA4MDAiLz48Y2lyY2xlIGN4PSIyMi41IiBjeT0iMjAuNSIgcj0iMC41IiBmaWxsPSJ3aGl0ZSIvPjxjaXJjbGUgY3g9IjI2LjUiIGN5PSIyMC41IiByPSIwLjUiIGZpbGw9IndoaXRlIi8+PHBhdGggZD0iTTIxLjUgMjQuNSBRMjQgMjYuNSAyNi41IDI0LjUiIHN0cm9rZT0iIzlhNTAzMCIgc3Ryb2tlLXdpZHRoPSIxLjEiIGZpbGw9Im5vbmUiLz48cmVjdCB4PSIxMCIgeT0iMzgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIzIiByeD0iMSIgZmlsbD0iIzFmMjkzNyIgb3BhY2l0eT0iMC44Ii8+PHJlY3QgeD0iOCIgeT0iNDEiIHdpZHRoPSIzMiIgaGVpZ2h0PSIxLjUiIHJ4PSIwLjUiIGZpbGw9IiMzNzQxNTEiIG9wYWNpdHk9IjAuNiIvPjwvc3ZnPg==" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"></div><div class="ci-meta"><div class="ci-row"><span class="ci-name">Squad Segurança — Trabalho</span><span class="ci-time">Sexta</span></div><div class="ci-prev">Esse teclado pode virar produto interno, hein…</div></div></div>
+    </div>
+    <button class="cl-fab" title="Nova mensagem">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+
+  <!-- ══ CHAT SCREEN ══ -->
+  <div id="chatScreen" class="chat-screen hidden">
+
+    <div class="ch-header">
+      <button class="ch-back" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="ch-av-wrap" id="chAvWrap">
+        <div class="ch-av" id="headerAv">D</div>
+        <div class="ch-info">
+          <div class="ch-name" id="headerName">Devyn</div>
+          <div class="ch-status" id="headerStatus">online</div>
+        </div>
+      </div>
+      <div class="ch-acts">
+        <button class="ch-act">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </button>
+        <button class="ch-act">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#aebac1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6.29 6.29l1.06-.94a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </button>
+        <button class="ch-act">
+          <svg viewBox="0 0 24 24" fill="#aebac1"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="convo-wrap">
+      <div class="convo hidden" id="convoDevyn">
+        <div class="date-label"><span>HOJE</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Oi, pode me passar seus dados de acesso rapidinho?<br>É só login e senha, prometo que é rápido. 😉<span class="msg-meta"><span class="msg-time">09:32</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Calma, vou digitar com o Teclado Protetor primeiro. 😏<span class="msg-meta"><span class="msg-time">09:33</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-right notail"><div class="msg msg-r">Ele analisa o link antes de eu clicar e já me avisa se é furada.<span class="msg-meta"><span class="msg-time">09:33</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Como assim "teclado"? 😳<br>Não é o antivírus que faz isso?<span class="msg-meta"><span class="msg-time">09:34</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">A maioria protege <em>depois</em> do clique…<br>O Teclado Protetor entra <strong>no momento da digitação</strong>, quando a gente tá com pressa e mais vulnerável.<span class="msg-meta"><span class="msg-time">09:35</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoHost">
+        <div class="date-label"><span>HOJE</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Oi Júlia! Aqui está o link oficial:<br><a class="msg-link" href="#">https://www.airbnb.com.br/rooms/83920172</a><br>Qualquer dúvida me chama 😊<span class="msg-meta"><span class="msg-time">08:45</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Perfeito, obrigada!<br>Vou usar o Teclado Protetor pra validar antes de compartilhar.<span class="msg-meta"><span class="msg-time">08:46</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Tranquilo! Só uso link oficial da plataforma, nada fora do Airbnb.<span class="msg-meta"><span class="msg-time">08:47</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Ótimo! Quando o link é legítimo, o teclado também confirma. 🛡️<span class="msg-meta"><span class="msg-time">08:48</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoFamily">
+        <div class="date-label"><span>ONTEM</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Gente, esse quarto tá perfeito pra vó! 💙<span class="msg-meta"><span class="msg-time">18:10</span></span></div></div>
+        <div class="msg-row r-left notail"><div class="msg msg-l">Achei um link com <strong>desconto exclusivo</strong>:<br><span class="link-bad">http://airbnb-promocoes-br.net/ferias</span><span class="msg-meta"><span class="msg-time">18:11</span></span></div></div>
+        <div class="msg-row r-left notail"><div class="msg msg-l">Se reservar aqui sai mais barato do que no Airbnb normal.<span class="msg-meta"><span class="msg-time">18:11</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Calma! Esse link tá suspeito.<br>Deixa eu testar no Teclado Protetor primeiro.<span class="msg-meta"><span class="msg-time">18:12</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Sério? Nem reparei que não era ".com.br" certinho… 😳<span class="msg-meta"><span class="msg-time">18:13</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Na correria, ninguém repara. Por isso o teclado vira proteção pra família toda. 🛡️<span class="msg-meta"><span class="msg-time">18:14</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoGrandma">
+        <div class="date-label"><span>ONTEM</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Júlia, sua tia mandou um link pra confirmar a viagem. Eu clico, né?<span class="msg-meta"><span class="msg-time">20:01</span></span></div></div>
+        <div class="msg-row r-left notail"><div class="msg msg-l">É esse aqui ó:<br><span class="link-bad">http://gov-br-servicos.online/login</span><span class="msg-meta"><span class="msg-time">20:01</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Vó, ainda bem que você perguntou! ❤️<br>Esse link <strong>não</strong> é o oficial do gov.br.<span class="msg-meta"><span class="msg-time">20:03</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Eu nem sei ver essas coisinhas de ponto, tracinho…<br>Se não fosse você, eu já tinha clicado. 😢<span class="msg-meta"><span class="msg-time">20:05</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Por isso mesmo, vó. Mesmo quem não entende de tecnologia merece uma proteção que fala a mesma língua. 🥺💚<span class="msg-meta"><span class="msg-time">20:06</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoPromo">
+        <div class="date-label"><span>ONTEM</span></div>
+
+        <!-- Remetente 1: Andréia -->
+        <div class="msg-row r-left" style="padding-top:6px">
+          <div class="msg-av-mini"><img src="https://api.dicebear.com/7.x/micah/svg?seed=andreia-grupo&radius=50&backgroundColor=7c3aed"></div>
+          <div>
+            <div class="msg-sender" style="color:#c084fc">Andréia</div>
+            <div class="msg msg-l"><em style="color:#8696a0;font-size:11.5px">⟳ Encaminhada muitas vezes</em><br>💸 <strong>PIX PREMIADO!</strong><br>Envie R$ 10 agora e receba R$ 500 de volta direto no seu PIX! Só hoje! ✅<br><span class="link-bad">pix-premiado-brasil.com</span><span class="msg-meta"><span class="msg-time">14:22</span></span></div>
+          </div>
+        </div>
+
+        <!-- Remetente 2: Keila -->
+        <div class="msg-row r-left" style="padding-top:6px">
+          <div class="msg-av-mini"><img src="https://api.dicebear.com/7.x/micah/svg?seed=keila-grupo&radius=50&backgroundColor=b45309"></div>
+          <div>
+            <div class="msg-sender" style="color:#fbbf24">Keila</div>
+            <div class="msg msg-l">Gente eu já recebi o meu!!! É REAL 🤑🤑 corre antes que acaba<span class="msg-meta"><span class="msg-time">14:23</span></span></div>
+          </div>
+        </div>
+
+        <!-- Remetente 3: Marcos -->
+        <div class="msg-row r-left" style="padding-top:6px">
+          <div class="msg-av-mini"><img src="https://api.dicebear.com/7.x/micah/svg?seed=marcos-grupo&radius=50&backgroundColor=065f46"></div>
+          <div>
+            <div class="msg-sender" style="color:#34d399">Marcos</div>
+            <div class="msg msg-l">minha prima também recebeu, já tô mandando os R$10 agora 🔥<span class="msg-meta"><span class="msg-time">14:24</span></span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="convo hidden" id="convoAgency">
+        <div class="date-label"><span>SEGUNDA</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Olá, Júlia! 👋<br>Segue o link do pacote oficial:<br><a class="msg-link" href="#">https://meuapp-verificado.com/pacote-familia</a><span class="msg-meta"><span class="msg-time">10:14</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Obrigada! Usando o teclado pra validar o domínio primeiro.<span class="msg-meta"><span class="msg-time">10:16</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-right notail"><div class="msg msg-r">Protege o cliente e as empresas sérias ao mesmo tempo. 🤝<span class="msg-meta"><span class="msg-time">10:18</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoBank">
+        <div class="date-label"><span>DOMINGO</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Olá, Júlia! Aqui é o time de Inovação do Banco do Brasil. 👋<br>Ficamos sabendo do seu protótipo de teclado de segurança. Adoramos a ideia!<span class="msg-meta"><span class="msg-time">15:10</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Que surpresa boa! Sim, a ideia é proteger o usuário no momento exato do clique, antes de qualquer dano.<span class="msg-meta"><span class="msg-time">15:12</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Exatamente o que precisamos! Golpes de phishing bancário cresceram 43% este ano só no WhatsApp.<br>Podemos fazer um teste com nosso link oficial? Quero ver como o teclado classifica.<span class="msg-meta"><span class="msg-time">15:13</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Claro! Manda o link. 🛡️<span class="msg-meta"><span class="msg-time">15:14</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Esse é o nosso internet banking oficial:<br><a class="msg-link" href="#">https://www.bb.com.br/acessodigital</a><span class="msg-meta"><span class="msg-time">15:15</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Colei no Teclado Protetor agora… ✅ <strong>Aprovado como confiável</strong> — bb.com.br está na base como domínio oficial do BB, certificado válido, histórico limpo.<span class="msg-meta"><span class="msg-time">15:17</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Perfeito! Agora imagina se fosse <em>bb-atualizar-cadastro.com</em>… o teclado pegaria de imediato. Isso é exatamente o que nossos clientes precisam. 💙<span class="msg-meta"><span class="msg-time">15:18</span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoFriend">
+        <div class="date-label"><span>DOMINGO</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Amiga, quase caí num golpe no Insta hoje. 😭<span class="msg-meta"><span class="msg-time">21:08</span></span></div></div>
+        <div class="msg-row r-left notail"><div class="msg msg-l">Recebi um link de sorteio de maquiagem, mas o endereço era todo estranho.<span class="msg-meta"><span class="msg-time">21:08</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Clássica! O teclado teria mostrado que o domínio era recente e com histórico de phishing.<span class="msg-meta"><span class="msg-time">21:10</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+        <div class="msg-row r-right notail"><div class="msg msg-r">A ideia é transformar o momento de dúvida num alerta claro, sem termos técnicos.<span class="msg-meta"><span class="msg-time">21:12</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+
+      <div class="convo hidden" id="convoWork">
+        <div class="date-label"><span>SEXTA</span></div>
+        <div class="msg-row r-left"><div class="msg msg-l">Pessoal, o protótipo do Teclado Protetor ficou pronto. 🚀<span class="msg-meta"><span class="msg-time">09:05</span></span></div></div>
+        <div class="msg-row r-left notail"><div class="msg msg-l">Quero mostrar como dá pra reduzir fraude só mudando o ponto da proteção, do site pro teclado.<span class="msg-meta"><span class="msg-time">09:06</span></span></div></div>
+        <div class="msg-row r-right"><div class="msg msg-r">Isso tem tudo a ver com nossa estratégia centrada no comportamento do usuário. 🎯<span class="msg-meta"><span class="msg-time">09:08</span><span class="msg-tick"><svg viewBox="0 0 16 11"><path d="M11.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-2.8-2.7a.45.45 0 0 1 .574-.694l.058.048 2.467 2.378 6.524-6.882z" fill="#53bdeb"/><path d="M15.071.653a.45.45 0 0 1 .685.585l-.047.055-6.8 7.2a.45.45 0 0 1-.603.06l-.058-.05-.647-.623a.45.45 0 0 1 .574-.694l.058.048.315.303 6.523-6.884z" fill="#53bdeb"/></svg></span></span></div></div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <div class="msg-bar" id="msgBar">
+        <button class="emoji-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </button>
+        <input type="text" class="msg-input" id="msgInput" placeholder="Mensagem" readonly/>
+        <button class="atch-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+        <button class="atch-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8696a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </button>
+      </div>
+      <button class="mic-btn">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 0-4 4v7a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="23" x2="16" y2="23" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <!-- Link alert strip -->
+    <div class="link-alert hidden" id="linkAlert">
+      <div class="la-left">
+        <div class="la-icon" id="laIcon">🔍</div>
+        <div class="la-text">
+          <div class="la-label" id="laLabel">ANÁLISE DE LINK</div>
+          <div class="la-msg" id="laMsg">Cole um link na barra do teclado.</div>
+        </div>
+      </div>
+      <button class="la-btn" id="laInfoBtn">VER INFO</button>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info-panel hidden" id="infoPanel">
+      <div class="ip-header">
+        <span class="ip-title-text">🛡 TECLADO PROTETOR</span>
+        <button class="ip-close" id="ipClose">✕</button>
+      </div>
+      <div class="ip-tabs">
+        <button class="ip-tab active" id="tabDetails">🔍 DETALHES</button>
+        <button class="ip-tab" id="tabAi">✦ ASSISTENTE IA</button>
+      </div>
+      <div class="ip-content">
+        <div class="ip-pane active" id="paneDetails">
+          <div id="detailsContent">
+            <div class="det-placeholder">Cole um link na barra do teclado e toque em <strong>VER INFO</strong>.</div>
+          </div>
+        </div>
+        <div class="ip-pane" id="paneAi">
+          <div class="ai-msgs" id="aiMsgs"></div>
+        </div>
+      </div>
+      <!-- Chips: aparecem acima do input, colapsáveis -->
+      <div class="ai-chips hidden" id="aiChips"></div>
+      <!-- Barra de input + botão de sugestões -->
+      <div class="ai-input-row hidden" id="aiInputRow">
+        <button class="ai-suggestions-toggle" id="aiSuggestionsToggle" title="Sugestões">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </button>
+        <input type="text" class="ai-input" id="aiInput" placeholder="Pergunte sobre este link…"/>
+        <button class="ai-send" id="aiSendBtn">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="ai-mode-badge hidden" id="aiModeBadge">✦ Claude AI</div>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="keyboard" id="keyboard">
+      <div class="kb-toolbar">
+        <div class="kb-tools">
+          <button class="kb-tool">⬜</button>
+          <button class="kb-tool">😊</button>
+          <button class="kb-tool">GIF</button>
+          <button class="kb-tool">⚙</button>
+        </div>
+        <div class="kb-link-zone">
+          <input type="text" class="kb-link-in" id="kbLinkIn" placeholder="Cole o link aqui…"/>
+          <span class="kb-status" id="kbStatus">Cole um link</span>
+        </div>
+      </div>
+      <div class="kb-rows">
+        <div class="kb-layout on" id="lettersLayout">
+          <div class="kb-row"><button class="key">Q</button><button class="key">W</button><button class="key">E</button><button class="key">R</button><button class="key">T</button><button class="key">Y</button><button class="key">U</button><button class="key">I</button><button class="key">O</button><button class="key">P</button></div>
+          <div class="kb-row"><button class="key">A</button><button class="key">S</button><button class="key">D</button><button class="key">F</button><button class="key">G</button><button class="key">H</button><button class="key">J</button><button class="key">K</button><button class="key">L</button></div>
+          <div class="kb-row"><button class="key key-sp key-w" data-a="shift">⇧</button><button class="key">Z</button><button class="key">X</button><button class="key">C</button><button class="key">V</button><button class="key">B</button><button class="key">N</button><button class="key">M</button><button class="key key-sp key-w" data-a="backspace">⌫</button></div>
+          <div class="kb-row"><button class="key key-sp key-w" data-a="numbers">?123</button><button class="key key-sp key-sm" data-a="comma">,</button><button class="key key-sp key-sm" data-a="emoji">😊</button><button class="key key-spc" data-a="space"></button><button class="key key-sp key-sm" data-a="dot">.</button><button class="key key-sp key-sm" data-a="enter">↵</button></div>
+        </div>
+        <div class="kb-layout" id="numbersLayout">
+          <div class="kb-row"><button class="key">1</button><button class="key">2</button><button class="key">3</button><button class="key">4</button><button class="key">5</button><button class="key">6</button><button class="key">7</button><button class="key">8</button><button class="key">9</button><button class="key">0</button></div>
+          <div class="kb-row"><button class="key">@</button><button class="key">#</button><button class="key">$</button><button class="key">_</button><button class="key">&amp;</button><button class="key">-</button><button class="key">+</button><button class="key">(</button><button class="key">)</button><button class="key">/</button></div>
+          <div class="kb-row"><button class="key key-sp">={`<`}</button><button class="key">*</button><button class="key">"</button><button class="key">'</button><button class="key">:</button><button class="key">;</button><button class="key">!</button><button class="key">?</button><button class="key key-sp" data-a="backspace">⌫</button></div>
+          <div class="kb-row"><button class="key key-sp key-w" data-a="letters">ABC</button><button class="key key-sp key-sm" data-a="comma">,</button><button class="key key-sp key-sm" data-a="emoji">😊</button><button class="key key-spc" data-a="space"></button><button class="key key-sp key-sm" data-a="dot">.</button><button class="key key-sp key-sm" data-a="enter">↵</button></div>
+        </div>
+      </div>
+      <div class="android-nav">
+        <div class="nav-b nav-sq"></div>
+        <div class="nav-b nav-ci"></div>
+        <div class="nav-b nav-tr" id="hideKb"></div>
+      </div>
+    </div>
+
+  </div><!-- /chatScreen -->
+
+  <!-- Photo viewer -->
+  <div class="photo-viewer hidden" id="photoViewer">
+    <div class="pv-hdr">
+      <button class="pv-close" id="pvClose">✕</button>
+      <div class="pv-info">
+        <div class="pv-name" id="pvName"></div>
+        <div class="pv-status" id="pvStatus"></div>
+      </div>
+    </div>
+    <div class="pv-body">
+      <div style="text-align:center">
+        <div class="pv-av-big" id="pvAvBig" style="margin:0 auto">?</div>
+        <div class="pv-placeholder">Foto de perfil — demo</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /phone -->
+
+<script src="data/link-db.js"></script>
+<script src="data/avatar-map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
